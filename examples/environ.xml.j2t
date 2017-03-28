@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- 
+  {{j2.warning}}
+  {{j2.warning}}
+-->
+
+<!-- 
+This is a sample template showing how to have templates that still conform
+to an XML schema.   Basically you encapsulate jinja constructs inside of 
+xml comments.  Also note how env[item] is filtered using the escape module
+to prevent invalid xml from happening if values contain < & or >
+
+   j2.py environment.xml.j2t
+-->
+
+<!--
+  {{j2.log}}
+  {{j2.log1}}
+  {{j2.log2}}
+  {{j2.log3}}
+  {{j2.log4}}
+
+  {{j2.logfull|indent(2)}}
+-->
+
+<variables> 
+<!-- {% for item in os.environ|sort -%} -->
+ <variable>
+   <name>{{ item }}</name>
+   <value>{{ env[item]|e }}</value>
+ </variable> 
+<!-- {% endfor -%} -->
+</environment>

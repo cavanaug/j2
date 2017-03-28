@@ -1,0 +1,7 @@
+This is a sample template to show the internal j2 variables
+
+j2.py internals.j2t
+
+{% for item in j2|sort %}
+j2.{{ item }}='{{ j2[item] }}'
+{% endfor %}

@@ -1,0 +1,7 @@
+This is a sample template that can be called like
+
+j2.py environment.j2t
+
+{% for item in os.environ %}
+{{ item }}={{ env[item] }}
+{% endfor %}

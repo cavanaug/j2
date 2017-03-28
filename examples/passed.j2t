@@ -1,0 +1,9 @@
+This is a sample template that can be called like
+
+Unix:  j2.py -e'string="with spaces"' -eword="singular" -enumber=23 passed.j2t
+ DOS:  j2.py -e"string='with spaces'" -e"word=singular" -enumber=23 passed.j2t
+
+string = {{ string }}
+word = {{ word }}
+number = {{ number }}
+
