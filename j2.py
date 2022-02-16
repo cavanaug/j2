@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Author: John Cavanaugh (cavanaug@hp.com)
 
@@ -370,9 +370,9 @@ class InfoAction(argparse.Action):
 
     
     """
-        print header
-        print "       " + re.sub('\n', "\n       ", parser.format_help(), count=0)
-        print trailer
+        print(header)
+        print( "       " + re.sub('\n', "\n       ", parser.format_help(), count=0))
+        print(trailer)
         exit(0)
 
 #
@@ -446,7 +446,7 @@ if args.MODULE:
                     DEBUG(2, "  Found module " + modname + " at " + pyfile + os.linesep)
                     execfile(pyfile)
                     break
-            except Exception, e:
+            except Exception as e:
                 sys.stderr.write("j2: Command line error ImportUnk: Module " + modname + ', ' + str(e) + os.linesep)
                 if DEBUG_LEVEL > 0:
                     traceback.print_exc()
@@ -470,7 +470,7 @@ if args.MODULEPATH:
             else:
                 sys.stderr.write("j2: Command line error ImportError: Can't find module at location " + modpath + ' for importing' + os.linesep)
                 exit(1)
-        except Exception, e:
+        except Exception as e:
             sys.stderr.write("j2: Command line error ImportUnk: Module " + modpath + ', ' + str(e) + os.linesep)
             if DEBUG_LEVEL>0:
                 traceback.print_exc()
