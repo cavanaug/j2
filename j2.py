@@ -43,7 +43,7 @@ import getpass
 import socket
 from jinja2 import Environment, FileSystemLoader
 from jinja2.exceptions import TemplateError, TemplateNotFound, TemplateSyntaxError
-import codecs
+#import codecs
 
 #
 # Key Configuration Items
@@ -533,7 +533,8 @@ def render_file_template(file, output):
         env.globals = globals()
         env.globals.update(locals())
         template = env.get_template(os.path.basename(file))
-        output.write(codecs.encode(template.render(env=os.environ)+os.linesep, j2_encoding))
+        #output.write(codecs.encode(template.render(env=os.environ)+os.linesep, j2_encoding))
+        output.write(template.render(env=os.environ)+os.linesep)
     except TemplateNotFound as e:
         sys.stderr.write("j2: Command line error TemplateNotFound: Can't open template " + e.name + os.linesep)
         exit(1)

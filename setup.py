@@ -7,12 +7,12 @@ from distutils.core import setup
 from distutils.command.install import INSTALL_SCHEMES
 import os, sys
 
-required_python_version = '2.6'
+required_python_version = '3.6'
 
 
 def main():
     if sys.version < required_python_version:
-       print "Requires Python %s or later" % (required_python_version)
+       print("Requires Python %s or later" % (required_python_version))
 
     # Force scripts into bin even on windows
     for scheme in INSTALL_SCHEMES.values():
